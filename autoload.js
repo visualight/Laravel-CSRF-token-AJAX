@@ -27,3 +27,12 @@ function refreshToken(callback){
 		callback(true);
 	});
 }
+
+/**
+* Refresh CSRF every 50 minutes
+*/
+setInterval(function(){
+	refreshToken(function(){
+		console.log("Token refreshed!");
+	});
+}, 3000000);
